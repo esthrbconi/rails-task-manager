@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Task Manager</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Tasks</h1>
+    <div class="d-flex align-items-center">
+      <ul>
+        <% @tasks.each do |task| %>
+          <li class="list-style: none">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label"></label>
+            <%= link_to task.title, task_path(task) %>
+            <%= link_to "", task_path(task), class: "glyphicon glyphicon-trash" , method: :delete, data: { confirm: "Are you sure? "} %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <%= link_to "Create new task", new_task_path %>
+  </div>
+</body>
+</html>

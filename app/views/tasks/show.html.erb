@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title><%= @task.title %></title>
+</head>
+<body>
+  <div class="container">
+    <h1><%= @task.title %></h1>
+    <div class="d-flex align-items-center">
+    <h3><%= @task.details %></h3>
+    <p><input type="checkbox"> This task is not completed yet</p>
+  </div>
+  <%= link_to "Edit this task", edit_task_path %>
+  <br>
+  <%= link_to "Back to task list", tasks_path %>
+</body>
+</html>
